@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bs2d64kyntx23"]
+
+[ext_resource type="FontFile" uid="uid://c6wx1rcjfgmue" path="res://assets/font/Oxanium-ExtraBold.ttf" id="1_rkqt5"]
+
+[resource]
+font = ExtResource("1_rkqt5")
+font_size = 90
+font_color = Color(0.8392157, 0.827451, 0.8, 1)
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(4, 4)

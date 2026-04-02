@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://w3og6uibqtbd"]
+
+[ext_resource type="FontFile" uid="uid://bm4arjtj5ytl" path="res://assets/font/InterTight-Bold.ttf" id="1_spqux"]
+
+[resource]
+font = ExtResource("1_spqux")
+font_size = 48
+font_color = Color(0.8392157, 0.827451, 0.8, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)

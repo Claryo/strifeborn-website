@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://daslxjo2pxt7s"]
+
+[ext_resource type="FontFile" uid="uid://ce2ewxbxvsj0x" path="res://assets/font/InterTight-SemiBold.ttf" id="1_2s7bm"]
+
+[resource]
+font = ExtResource("1_2s7bm")
+font_size = 28
+font_color = Color(0.8392157, 0.827451, 0.8, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)

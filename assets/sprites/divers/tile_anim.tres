@@ -1,0 +1,129 @@
+[gd_resource type="SpriteFrames" load_steps=19 format=3 uid="uid://dwmlo0kuak2ae"]
+
+[ext_resource type="Texture2D" uid="uid://cpa76mkyur17y" path="res://assets/game icons/divers/attacked_tile_anim.png" id="1_x5bfd"]
+[ext_resource type="Texture2D" uid="uid://dvukwnyow6gnd" path="res://assets/game icons/divers/buffed_tile_anim.png" id="2_qirhg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4myl"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1emj4"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjdew"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8s55"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ivdt"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tscrg"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl4se"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8fw4"]
+atlas = ExtResource("1_x5bfd")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4gu2"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aaiay"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxahk"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27wq4"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3t07"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xbx1"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00eva"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehrh4"]
+atlas = ExtResource("2_qirhg")
+region = Rect2(224, 0, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4myl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1emj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjdew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8s55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ivdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tscrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl4se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8fw4")
+}],
+"loop": false,
+"name": &"attacked_tile",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4gu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aaiay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxahk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27wq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3t07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xbx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00eva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehrh4")
+}],
+"loop": false,
+"name": &"buffed_tile",
+"speed": 24.0
+}]

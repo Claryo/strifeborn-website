@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://btq1pqjgixhyc"]
+
+[ext_resource type="FontFile" uid="uid://yg44dpttwjo0" path="res://assets/font/Teko-Medium.ttf" id="1_fxn2d"]
+
+[resource]
+font = ExtResource("1_fxn2d")
+font_size = 58
+font_color = Color(0.8392157, 0.827451, 0.8, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
