@@ -1,0 +1,149 @@
+{{ define "main" }}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ .Site.Title }}</h1>
+            <p class="hero-subtitle">{{ .Site.Params.game.tagline }}</p>
+            <p class="hero-description">
+                A tactical auto-battler where synergies, hero composition, and strategic itemization 
+                determine victory. Master six unique factions, unlock powerful blessings, and forge 
+                your path through endless battles.
+            </p>
+            <div class="hero-cta">
+                <a href="/heroes/" class="btn btn-primary">Explore Heroes</a>
+                <a href="/devlog/" class="btn btn-secondary">Read Devlog</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Game Features -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title">Core Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚔️</div>
+                <h3>Tactical Auto-Battler</h3>
+                <p>Position your heroes strategically and watch them battle autonomously with intelligent AI</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔮</div>
+                <h3>Deep Synergy System</h3>
+                <p>Combine heroes from the same faction or class to unlock powerful synergy bonuses</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Strategic Itemization</h3>
+                <p>Equip items, artifacts, and hero relics to customize your champions</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📜</div>
+                <h3>Blessing & Oath Systems</h3>
+                <p>Choose powerful blessings and commit to faction oaths that shape your entire run</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Multiple Game Modes</h3>
+                <p>Test your skills in Campaign, Arena, and competitive PvP modes</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Meta Progression</h3>
+                <p>Level up heroes, unlock relics, and earn persistent upgrades between runs</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Factions Showcase -->
+<section class="factions-section">
+    <div class="container">
+        <h2 class="section-title">The Six Factions</h2>
+        <p class="section-subtitle">Each faction brings unique playstyles and strategic depth</p>
+        
+        <div class="factions-grid">
+            <a href="/factions/aegis/" class="faction-card faction-aegis">
+                <div class="faction-icon">🛡️</div>
+                <h3>Aegis</h3>
+                <p>Shields, protection, endurance</p>
+            </a>
+            
+            <a href="/factions/eclipse/" class="faction-card faction-eclipse">
+                <div class="faction-icon">🌑</div>
+                <h3>Eclipse</h3>
+                <p>Death-fueled power, revival</p>
+            </a>
+            
+            <a href="/factions/inquisition/" class="faction-card faction-inquisition">
+                <div class="faction-icon">✨</div>
+                <h3>Inquisition</h3>
+                <p>Holy magic, wisdom, judgment</p>
+            </a>
+            
+            <a href="/factions/nebulae/" class="faction-card faction-nebulae">
+                <div class="faction-icon">🌌</div>
+                <h3>Nebulae</h3>
+                <p>Alien chaos, corruption</p>
+            </a>
+            
+            <a href="/factions/nexus/" class="faction-card faction-nexus">
+                <div class="faction-icon">⚙️</div>
+                <h3>Nexus</h3>
+                <p>Robotic efficiency, systems</p>
+            </a>
+            
+            <a href="/factions/shogunate/" class="faction-card faction-shogunate">
+                <div class="faction-icon">⚔️</div>
+                <h3>Shogunate</h3>
+                <p>Speed, critical strikes, honor</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Latest Devlog Posts -->
+<section class="devlog-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Latest Devlog</h2>
+            <a href="/devlog/" class="view-all-link">View All Posts →</a>
+        </div>
+        
+        <div class="devlog-grid">
+            {{ range first 3 (where .Site.RegularPages "Section" "devlog") }}
+            <article class="devlog-card">
+                <div class="devlog-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                </div>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="read-more">Read More →</a>
+            </article>
+            {{ else }}
+            <p class="no-posts">No devlog posts yet. Check back soon!</p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Stay Updated</h2>
+        <p>Follow development on X and LinkedIn for the latest updates and announcements</p>
+        <div class="cta-buttons">
+            <a href="{{ .Site.Params.social.twitter }}" target="_blank" class="btn btn-primary">Follow on X</a>
+            <a href="{{ .Site.Params.social.linkedin }}" target="_blank" class="btn btn-secondary">Connect on LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+{{ end }}

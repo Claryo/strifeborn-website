@@ -1,0 +1,129 @@
+{{ define "main" }}
+<article class="hero-page">
+    <div class="container">
+        <!-- Hero Header -->
+        <header class="hero-header">
+            <div class="hero-title-section">
+                <h1 class="hero-name">{{ .Title }}</h1>
+                <div class="hero-classifications">
+                    {{ if .Params.faction }}
+                    <span class="hero-faction faction-{{ .Params.faction | lower }}">{{ .Params.faction }}</span>
+                    {{ end }}
+                    {{ if .Params.class }}
+                    <span class="hero-class">{{ .Params.class }}</span>
+                    {{ end }}
+                </div>
+            </div>
+            {{ if .Params.tagline }}
+            <p class="hero-tagline">{{ .Params.tagline }}</p>
+            {{ end }}
+        </header>
+        
+        <!-- Hero Stats -->
+        {{ if .Params.stats }}
+        <section class="hero-stats">
+            <h2>Base Stats (Tier 1)</h2>
+            <div class="stats-grid">
+                {{ with .Params.stats }}
+                <div class="stat-item">
+                    <span class="stat-label">HP</span>
+                    <span class="stat-value">{{ .hp }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Strength</span>
+                    <span class="stat-value">{{ .strength }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Wisdom</span>
+                    <span class="stat-value">{{ .wisdom }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Phys Def</span>
+                    <span class="stat-value">{{ .phys_def }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Spell Def</span>
+                    <span class="stat-value">{{ .spell_def }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Range</span>
+                    <span class="stat-value">{{ .range }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Attack Speed</span>
+                    <span class="stat-value">{{ .attack_speed }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Crit Chance</span>
+                    <span class="stat-value">{{ .crit_chance }}%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Crit Damage</span>
+                    <span class="stat-value">{{ .crit_damage }}%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Move Speed</span>
+                    <span class="stat-value">{{ .move_speed }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Max Mana</span>
+                    <span class="stat-value">{{ .max_mana }}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Starting Mana</span>
+                    <span class="stat-value">{{ .starting_mana }}</span>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+        
+        <!-- Hero Description -->
+        <section class="hero-description">
+            {{ .Content }}
+        </section>
+        
+        <!-- Abilities Section (if provided) -->
+        {{ if .Params.abilities }}
+        <section class="hero-abilities">
+            <h2>Abilities</h2>
+            {{ with .Params.abilities }}
+            
+            {{ if .basic_attack }}
+            <div class="ability-card">
+                <h3>Basic Attack</h3>
+                <p>{{ .basic_attack }}</p>
+            </div>
+            {{ end }}
+            
+            {{ if .spell }}
+            <div class="ability-card">
+                <h3>Spell</h3>
+                <p>{{ .spell }}</p>
+            </div>
+            {{ end }}
+            
+            {{ if .passive }}
+            <div class="ability-card">
+                <h3>Passive</h3>
+                <p>{{ .passive }}</p>
+            </div>
+            {{ end }}
+            
+            {{ end }}
+        </section>
+        {{ end }}
+        
+        <!-- Hero Relic (if provided) -->
+        {{ if .Params.relic }}
+        <section class="hero-relic">
+            <h2>Hero Relic</h2>
+            <div class="relic-card">
+                <h3>{{ .Params.relic.name }}</h3>
+                <p>{{ .Params.relic.description }}</p>
+            </div>
+        </section>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

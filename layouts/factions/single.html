@@ -1,0 +1,36 @@
+{{ define "main" }}
+<article class="faction-page faction-{{ .Title | lower }}">
+    <div class="container">
+        <header class="faction-header">
+            <h1 class="faction-name">{{ .Title }}</h1>
+            {{ if .Params.tagline }}
+            <p class="faction-tagline">{{ .Params.tagline }}</p>
+            {{ end }}
+            {{ if .Params.identity }}
+            <p class="faction-identity">{{ .Params.identity }}</p>
+            {{ end }}
+        </header>
+        
+        <div class="faction-content">
+            {{ .Content }}
+        </div>
+        
+        <!-- Faction Heroes -->
+        <section class="faction-heroes">
+            <h2>{{ .Title }} Heroes</h2>
+            <div class="heroes-grid">
+                {{ range where .Site.RegularPages "Params.faction" .Title }}
+                <a href="{{ .Permalink }}" class="hero-card-mini">
+                    <h3>{{ .Title }}</h3>
+                    {{ if .Params.class }}
+                    <span class="hero-class">{{ .Params.class }}</span>
+                    {{ end }}
+                </a>
+                {{ else }}
+                <p>No heroes available for this faction yet.</p>
+                {{ end }}
+            </div>
+        </section>
+    </div>
+</article>
+{{ end }}

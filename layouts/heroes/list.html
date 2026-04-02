@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="heroes-list-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>{{ .Title }}</h1>
+            <p class="page-description">Choose your champions from six unique factions</p>
+        </header>
+        
+        {{ if .Content }}
+        <div class="page-intro">
+            {{ .Content }}
+        </div>
+        {{ end }}
+        
+        <!-- Filter by faction (optional enhancement for later) -->
+        <div class="heroes-filters">
+            <button class="filter-btn active" data-filter="all">All Heroes</button>
+            <button class="filter-btn" data-filter="aegis">Aegis</button>
+            <button class="filter-btn" data-filter="eclipse">Eclipse</button>
+            <button class="filter-btn" data-filter="inquisition">Inquisition</button>
+            <button class="filter-btn" data-filter="nebulae">Nebulae</button>
+            <button class="filter-btn" data-filter="nexus">Nexus</button>
+            <button class="filter-btn" data-filter="shogunate">Shogunate</button>
+        </div>
+        
+        <!-- Heroes Grid -->
+        <div class="heroes-grid">
+            {{ range .Pages }}
+            <a href="{{ .Permalink }}" class="hero-card" data-faction="{{ .Params.faction | lower }}">
+                <div class="hero-card-header">
+                    <h3 class="hero-card-name">{{ .Title }}</h3>
+                    <span class="hero-card-faction faction-{{ .Params.faction | lower }}">
+                        {{ .Params.faction }}
+                    </span>
+                </div>
+                
+                {{ if .Params.class }}
+                <div class="hero-card-class">{{ .Params.class }}</div>
+                {{ end }}
+                
+                {{ if .Params.tagline }}
+                <p class="hero-card-tagline">{{ .Params.tagline }}</p>
+                {{ end }}
+                
+                {{ if .Params.stats }}
+                <div class="hero-card-stats">
+                    <div class="stat-mini">
+                        <span class="stat-icon">❤️</span>
+                        <span>{{ .Params.stats.hp }}</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-icon">⚔️</span>
+                        <span>{{ .Params.stats.strength }}</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-icon">✨</span>
+                        <span>{{ .Params.stats.wisdom }}</span>
+                    </div>
+                </div>
+                {{ end }}
+            </a>
+            {{ else }}
+            <p class="no-heroes">No heroes available yet. Check back soon!</p>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}

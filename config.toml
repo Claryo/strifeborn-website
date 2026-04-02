@@ -1,0 +1,74 @@
+baseURL = "https://strifeborn.com"
+languageCode = "en-us"
+title = "Strifeborn"
+# theme = ""
+
+# Pagination
+paginate = 10
+
+# Taxonomies (categories and tags)
+[taxonomies]
+  faction = "factions"
+  class = "classes"
+  tag = "tags"
+
+# Site parameters
+[params]
+  description = "Master synergies, command heroes, conquer the Strife"
+  author = "Claryo Dev"
+  
+  # Social links
+  [params.social]
+    twitter = "https://x.com/ClaryoDev"
+    linkedin = "https://www.linkedin.com/in/alexan-viel-211659141/"
+    email = "contact@strifeborn.com"
+  
+  # Game info
+  [params.game]
+    status = "In Development"
+    tagline = "Tactical Auto-Battler with Deep Strategic Depth"
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  
+  [[menu.main]]
+    name = "Heroes"
+    url = "/heroes/"
+    weight = 2
+  
+  [[menu.main]]
+    name = "Factions"
+    url = "/factions/"
+    weight = 3
+  
+  [[menu.main]]
+    name = "Mechanics"
+    url = "/mechanics/"
+    weight = 4
+  
+  [[menu.main]]
+    name = "Lore"
+    url = "/lore/"
+    weight = 5
+  
+  [[menu.main]]
+    name = "Devlog"
+    url = "/devlog/"
+    weight = 6
+  
+  [[menu.main]]
+    name = "News"
+    url = "/news/"
+    weight = 7
+
+# Markup settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
