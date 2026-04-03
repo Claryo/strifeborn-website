@@ -81,47 +81,61 @@
 
 <div class="lp-divider" aria-hidden="true"></div>
 
-<!-- ── GAMEPLAY CAROUSEL ──────────────────────────────── -->
+<!-- ── GAMEPLAY ────────────────────────────────────────── -->
 <section class="lp-gameplay">
     <div class="lp-container">
         <span class="lp-section-label lp-centered">Gameplay</span>
-        <div class="lp-carousel" id="gameplayCarousel">
-            <div class="lp-carousel-track">
+        <div class="lp-gameplay-grid">
 
-                <div class="lp-slide">
-                    <div class="lp-portrait-placeholder lp-placeholder--shop">
-                        <!-- <video src="/videos/shop.mp4" autoplay loop muted playsinline></video> -->
-                        <div class="lp-portrait-label">Shop Phase</div>
-                    </div>
-                    <p class="lp-slide-caption"><strong>Shop Phase</strong> — Recruit heroes, build your composition, and spend gold wisely before the next round begins.</p>
+            <div class="lp-gameplay-item">
+                <!--
+                  HOW TO ADD YOUR MEDIA HERE:
+
+                  Image (PNG/JPG/GIF):
+                    Replace this entire div with:
+                    <img src="/images/gameplay-shop.png" alt="Shop Phase" class="lp-portrait-media">
+
+                  Looping video (MP4, muted autoplay):
+                    <video class="lp-portrait-media" autoplay loop muted playsinline>
+                      <source src="/images/gameplay-shop.mp4" type="video/mp4">
+                    </video>
+
+                  GIF: same as image — <img src="/images/gameplay-shop.gif" ...>
+
+                  Files go in: static/images/
+                  Reference path: /images/your-file.ext
+                  Recommended size: ~200×444 px (9:20 portrait ratio)
+                -->
+                <div class="lp-portrait-placeholder lp-placeholder--shop">
+                    <div class="lp-portrait-label">Shop Phase</div>
                 </div>
-
-                <div class="lp-slide">
-                    <div class="lp-portrait-placeholder lp-placeholder--combat">
-                        <!-- <video src="/videos/combat.mp4" autoplay loop muted playsinline></video> -->
-                        <div class="lp-portrait-label">Combat Phase</div>
-                    </div>
-                    <p class="lp-slide-caption"><strong>Combat Phase</strong> — Watch synergies resolve automatically as your team fights with no further input required.</p>
-                </div>
-
-                <div class="lp-slide">
-                    <div class="lp-portrait-placeholder lp-placeholder--blessing">
-                        <!-- <video src="/videos/blessing.mp4" autoplay loop muted playsinline></video> -->
-                        <div class="lp-portrait-label">Blessing</div>
-                    </div>
-                    <p class="lp-slide-caption"><strong>Blessing Selection</strong> — Choose a blessing between rounds to amplify a playstyle and shape the rest of your run.</p>
-                </div>
-
+                <p class="lp-slide-caption"><strong>Shop Phase</strong> — Recruit heroes, build your composition, and spend gold wisely before the next round begins.</p>
             </div>
 
-            <button class="lp-carousel-btn lp-carousel-prev" aria-label="Previous slide">&#8249;</button>
-            <button class="lp-carousel-btn lp-carousel-next" aria-label="Next slide">&#8250;</button>
-
-            <div class="lp-carousel-dots">
-                <button class="lp-dot active" aria-label="Slide 1"></button>
-                <button class="lp-dot" aria-label="Slide 2"></button>
-                <button class="lp-dot" aria-label="Slide 3"></button>
+            <div class="lp-gameplay-item">
+                <!--
+                  HOW TO ADD YOUR MEDIA HERE:
+                  Replace the div below with an <img> or <video> (see first item for examples).
+                  File: static/images/gameplay-combat.{png|gif|mp4}
+                -->
+                <div class="lp-portrait-placeholder lp-placeholder--combat">
+                    <div class="lp-portrait-label">Combat Phase</div>
+                </div>
+                <p class="lp-slide-caption"><strong>Combat Phase</strong> — Watch synergies resolve automatically as your team fights with no further input required.</p>
             </div>
+
+            <div class="lp-gameplay-item">
+                <!--
+                  HOW TO ADD YOUR MEDIA HERE:
+                  Replace the div below with an <img> or <video> (see first item for examples).
+                  File: static/images/gameplay-blessing.{png|gif|mp4}
+                -->
+                <div class="lp-portrait-placeholder lp-placeholder--blessing">
+                    <div class="lp-portrait-label">Blessing</div>
+                </div>
+                <p class="lp-slide-caption"><strong>Blessing Selection</strong> — Choose a blessing between rounds to amplify a playstyle and shape the rest of your run.</p>
+            </div>
+
         </div>
     </div>
 </section>
@@ -223,8 +237,48 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 Follow on X
             </a>
-            <a href="mailto:{{ .Site.Params.social.email }}" class="btn btn-secondary">Get in Touch</a>
         </div>
+    </div>
+</section>
+
+<div class="lp-divider" aria-hidden="true"></div>
+
+<!-- ── CONTACT ───────────────────────────────────────── -->
+<section class="lp-contact">
+    <div class="lp-container lp-narrow">
+        <span class="lp-section-label lp-centered">Contact</span>
+        <h2>Get in Touch</h2>
+        <p class="lp-contact-sub">Questions, feedback, or press inquiries — send us a message and we'll get back to you.</p>
+
+        {{- if .Site.Params.formspree_id }}
+        <form
+            action="https://formspree.io/f/{{ .Site.Params.formspree_id }}"
+            method="POST"
+            class="contact-form"
+        >
+            {{/* Honeypot — hidden from humans, filled by bots → Formspree rejects submission */}}
+            <input type="text" name="_gotcha" class="contact-honeypot" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="_subject" value="Strifeborn Contact">
+
+            <div class="contact-row">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" required placeholder="Your name">
+            </div>
+            <div class="contact-row">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" required placeholder="your@email.com">
+            </div>
+            <div class="contact-row">
+                <label for="contact-msg">Message</label>
+                <textarea id="contact-msg" name="message" rows="5" required placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+        {{- else }}
+        <p class="lp-contact-fallback">
+            Reach us at <a href="mailto:{{ .Site.Params.social.email }}">{{ .Site.Params.social.email }}</a>
+        </p>
+        {{- end }}
     </div>
 </section>
 

@@ -23,6 +23,10 @@ paginate = 10
     linkedin = "https://www.linkedin.com/in/alexan-viel-211659141/"
     email = "contact@strifeborn.com"
   
+  # Formspree contact form endpoint ID (get it from formspree.io after creating a form)
+  # Example: formspree_id = "xabc1234"
+  formspree_id = ""
+
   # Game info
   [params.game]
     status = "In Development"
