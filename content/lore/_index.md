@@ -1,29 +1,25 @@
 ---
 title: "Lore"
-description: "Discover the story and world of Strifeborn"
+description: "The story of The Fracture, The Chorus Beyond, and the world of Strifeborn."
 ---
 
 ## The World of Strifeborn
 
-In a realm torn between order and chaos, six factions wage eternal war. Each seeks to impose their vision upon reality itself - whether through divine judgment, technological supremacy, or the embrace of entropy.
+On **July 16, 2186**, an event known as **The Fracture** split reality. An incomprehensible entity — *The Chorus Beyond* — did not invade. It simply damaged the fabric of existence, leaving behind permanent corruption and a wound in the world that no faction fully understands.
 
-## The Factions
+Six powers rose in response, each interpreting the Fracture through their own ideology and each pursuing a different answer to the same question: *what do you do when reality itself is broken?*
 
-Learn more about each faction's origin, philosophy, and role in the endless conflict:
+## Read the Lore
 
-- **[Aegis](/factions/aegis/)** - The eternal bastions of protection
-- **[Eclipse](/factions/eclipse/)** - Masters of death and shadow
-- **[Inquisition](/factions/inquisition/)** - Wielders of holy judgment
-- **[Nebulae](/factions/nebulae/)** - Alien entities from beyond reality
-- **[Nexus](/factions/nexus/)** - Synthetic beings of perfect efficiency
-- **[Shogunate](/factions/shogunate/)** - Warriors bound by honor and blade
+- [The Fracture — The event that changed everything](/lore/the-fracture/)
 
-## The Strife
+## The Six Factions
 
-*More lore content coming soon as development progresses...*
+Each faction's full story — including their philosophy, their response to the Chorus Beyond, and the campaign chapters — can be found on their respective pages:
 
-The conflict that defines this world began long before recorded history. Some say it's a war between fundamental forces - order and chaos, creation and entropy, light and darkness. Others believe it's merely the nature of existence itself: eternal struggle without beginning or end.
-
-What is certain is that heroes from all factions continue to rise, drawn by destiny or design to participate in this endless battle. Their choices, alliances, and sacrifices shape the very fabric of reality.
-
-Will you bring order to chaos? Embrace the void? Or carve your own path through the Strife?
+- **[Aegis](/factions/aegis/)** — Power through command, stability through control
+- **[Eclipse](/factions/eclipse/)** — Instinct over civilization, strength through dominance
+- **[Inquisition](/factions/inquisition/)** — Faith and divine judgment as absolute certainty
+- **[Nebulae](/factions/nebulae/)** — Non-intervention and absolute restraint from the void
+- **[Nexus](/factions/nexus/)** — Perfect system calculation replacing human error
+- **[Shogunate](/factions/shogunate/)** — Balance, restraint, and the regulation of conflict

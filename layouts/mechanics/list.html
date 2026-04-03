@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container">
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Description | default "Understand every system that drives Strifeborn's strategic depth." }}</p>
+    </div>
+
+    <section class="mechanics-list-section">
+        <div class="mechanics-grid">
+            {{ range .Pages }}
+            <a href="{{ .Permalink }}" class="mechanic-card">
+                {{ if .Params.icon }}<div class="mechanic-icon">{{ .Params.icon }}</div>{{ end }}
+                <h3>{{ .Title }}</h3>
+                {{ if .Description }}<p>{{ .Description }}</p>{{ end }}
+            </a>
+            {{ else }}
+            <p class="no-posts">Mechanics pages coming soon.</p>
+            {{ end }}
+        </div>
+    </section>
+</div>
+{{ end }}

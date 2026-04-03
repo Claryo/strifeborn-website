@@ -1,36 +1,133 @@
 {{ define "main" }}
-<article class="faction-page faction-{{ .Title | lower }}">
-    <div class="container">
-        <header class="faction-header">
-            <h1 class="faction-name">{{ .Title }}</h1>
+{{ $slug := .File.ContentBaseName }}
+{{ $factionColor := printf "var(--faction-%s)" $slug }}
+
+<article class="faction-page">
+    <!-- Banner -->
+    <div class="faction-banner"
+         style="background-image: url('/images/backgrounds/{{ $slug }}_background.png');">
+        <div class="faction-banner-content container">
+            <h1 class="faction-banner-title" style="color: {{ $factionColor }}">{{ .Title }}</h1>
             {{ if .Params.tagline }}
-            <p class="faction-tagline">{{ .Params.tagline }}</p>
+            <p class="faction-banner-tagline">{{ .Params.tagline }}</p>
             {{ end }}
-            {{ if .Params.identity }}
-            <p class="faction-identity">{{ .Params.identity }}</p>
-            {{ end }}
-        </header>
-        
-        <div class="faction-content">
-            {{ .Content }}
         </div>
-        
-        <!-- Faction Heroes -->
-        <section class="faction-heroes">
-            <h2>{{ .Title }} Heroes</h2>
-            <div class="heroes-grid">
-                {{ range where .Site.RegularPages "Params.faction" .Title }}
-                <a href="{{ .Permalink }}" class="hero-card-mini">
-                    <h3>{{ .Title }}</h3>
-                    {{ if .Params.class }}
-                    <span class="hero-class">{{ .Params.class }}</span>
-                    {{ end }}
-                </a>
-                {{ else }}
-                <p>No heroes available for this faction yet.</p>
+    </div>
+
+    <div class="container">
+
+        <!-- Identity & Art Style -->
+        {{ if or .Params.identity .Params.art_style }}
+        <div style="display:flex;gap:var(--spacing-md);flex-wrap:wrap;margin-bottom:var(--spacing-xl)">
+            {{ if .Params.identity }}
+            <div style="flex:1;min-width:220px;background:var(--bg-card);border-radius:var(--radius-lg);padding:var(--spacing-md);border:1px solid var(--border-subtle)">
+                <div style="font-family:var(--font-ui);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px">Identity</div>
+                <div style="color:var(--text-primary);font-size:0.95rem">{{ .Params.identity }}</div>
+            </div>
+            {{ end }}
+            {{ if .Params.art_style }}
+            <div style="flex:1;min-width:220px;background:var(--bg-card);border-radius:var(--radius-lg);padding:var(--spacing-md);border:1px solid var(--border-subtle)">
+                <div style="font-family:var(--font-ui);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px">Art Style</div>
+                <div style="color:var(--text-primary);font-size:0.95rem">{{ .Params.art_style }}</div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        <!-- Lore -->
+        {{ if .Content }}
+        <section class="faction-section">
+            <h2 class="faction-section-title" style="color:{{ $factionColor }}">Lore</h2>
+            <div class="faction-lore">{{ .Content }}</div>
+        </section>
+        {{ end }}
+
+        <!-- Synergy -->
+        {{ if .Params.synergy }}
+        <section class="faction-section">
+            <h2 class="faction-section-title" style="color:{{ $factionColor }}">Faction Synergy</h2>
+            <div class="synergy-thresholds">
+                {{ if .Params.synergy.threshold_2 }}
+                <div class="synergy-threshold">
+                    <span class="threshold-badge" style="color:{{ $factionColor }}">2 ✦</span>
+                    <p>{{ .Params.synergy.threshold_2 }}</p>
+                </div>
+                {{ end }}
+                {{ if .Params.synergy.threshold_4 }}
+                <div class="synergy-threshold">
+                    <span class="threshold-badge" style="color:{{ $factionColor }}">4 ✦</span>
+                    <p>{{ .Params.synergy.threshold_4 }}</p>
+                </div>
+                {{ end }}
+                {{ if .Params.synergy.threshold_6 }}
+                <div class="synergy-threshold">
+                    <span class="threshold-badge" style="color:{{ $factionColor }}">6 ✦</span>
+                    <p>{{ .Params.synergy.threshold_6 }}</p>
+                </div>
                 {{ end }}
             </div>
         </section>
+        {{ end }}
+
+        <!-- Heroes -->
+        <section class="faction-section">
+            <h2 class="faction-section-title" style="color:{{ $factionColor }}">Heroes</h2>
+            {{ $heroes := where .Site.RegularPages "Params.faction" .Title }}
+            {{ if $heroes }}
+            <div class="faction-heroes-grid">
+                {{ range $heroes }}
+                <a href="{{ .Permalink }}" class="faction-hero-link">
+                    <div class="faction-hero-name">{{ .Title }}</div>
+                    <div class="faction-hero-class">{{ .Params.class }}{{ if .Params.extra_synergy }} · {{ .Params.extra_synergy }}{{ end }}</div>
+                </a>
+                {{ end }}
+            </div>
+            {{ else }}
+            <p style="color:var(--text-secondary)">Hero pages coming soon.</p>
+            {{ end }}
+        </section>
+
+        <!-- Faction Oaths -->
+        {{ if .Params.oaths }}
+        <section class="faction-section">
+            <h2 class="faction-section-title" style="color:{{ $factionColor }}">Faction Oaths</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--spacing-md)">
+                Choose one oath at the start of a run to define how you approach the game's systems.
+                Each oath is a powerful modifier with a meaningful tradeoff.
+            </p>
+            <div class="oaths-grid">
+                {{ range .Params.oaths }}
+                <div class="oath-card">
+                    <div class="oath-name">{{ .name }}</div>
+                    <p class="oath-desc">{{ .description }}</p>
+                    {{ if .tradeoff }}
+                    <div class="oath-tradeoff">⚠ {{ .tradeoff }}</div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+
+        <!-- Enemies -->
+        {{ if .Params.enemies }}
+        <section class="faction-section">
+            <h2 class="faction-section-title" style="color:{{ $factionColor }}">Enemies</h2>
+            <p style="color:var(--text-secondary);margin-bottom:var(--spacing-md)">
+                Enemies encountered in {{ .Title }} territory, from overwhelming swarms to powerful elites.
+            </p>
+            <div class="enemies-grid">
+                {{ range .Params.enemies }}
+                <div class="enemy-card">
+                    <div class="enemy-name">{{ .name }}</div>
+                    <div class="enemy-type enemy-type-{{ .type | lower }}">{{ .type }}</div>
+                    {{ if .description }}<p class="enemy-desc">{{ .description }}</p>{{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+
     </div>
 </article>
 {{ end }}

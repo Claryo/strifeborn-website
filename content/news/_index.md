@@ -1,6 +1,6 @@
 ---
-title: "News & Announcements"
-description: "Latest updates, events, and announcements for Strifeborn"
+title: "News & Events"
+description: "Announcements, patch notes, updates, and events for Strifeborn."
 ---
 
-Stay informed about the latest Strifeborn news, including patch notes, events, and major announcements.
+This section will carry news, patch notes, and event announcements once Strifeborn launches. For now, follow development updates on the [Devlog](/devlog/) and stay connected on [X (@ClaryoDev)](https://x.com/ClaryoDev).

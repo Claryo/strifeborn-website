@@ -1,33 +1,34 @@
 {{ define "main" }}
-<div class="list-page">
-    <div class="container">
-        <header class="page-header">
-            <h1>{{ .Title }}</h1>
-            {{ if .Params.description }}
-            <p class="page-description">{{ .Params.description }}</p>
-            {{ end }}
-        </header>
-        
-        {{ if .Content }}
-        <div class="page-intro">
-            {{ .Content }}
-        </div>
-        {{ end }}
-        
-        <div class="list-content">
+<div class="container">
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{ if .Description }}<p>{{ .Description }}</p>{{ end }}
+    </div>
+
+    {{ if .Content }}
+    <div class="default-page" style="padding-top:0;margin-top:0">{{ .Content }}</div>
+    {{ end }}
+
+    <section class="posts-section">
+        {{ if .Pages }}
+        <div class="posts-list">
             {{ range .Pages }}
-            <article class="list-item">
+            <article class="post-item">
+                {{ if .Date }}
+                <div class="post-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ if .Params.author }} · {{ .Params.author }}{{ end }}
+                </div>
+                {{ end }}
                 <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                {{ if .Params.subtitle }}
-                <p class="item-subtitle">{{ .Params.subtitle }}</p>
-                {{ end }}
-                {{ if .Summary }}
-                <p class="item-summary">{{ .Summary }}</p>
-                {{ end }}
+                {{ if .Summary }}<p>{{ .Summary }}</p>{{ end }}
                 <a href="{{ .Permalink }}" class="read-more">Read More →</a>
             </article>
             {{ end }}
         </div>
-    </div>
+        {{ else }}
+        <p class="no-posts">Nothing here yet — check back soon.</p>
+        {{ end }}
+    </section>
 </div>
 {{ end }}

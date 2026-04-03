@@ -1,35 +1,29 @@
 {{ define "main" }}
-<div class="factions-list-page">
-    <div class="container">
-        <header class="page-header">
-            <h1>{{ .Title }}</h1>
-            <p class="page-description">Six factions, each with unique playstyles and strategic depth</p>
-        </header>
-        
-        {{ if .Content }}
-        <div class="page-intro">
-            {{ .Content }}
-        </div>
-        {{ end }}
-        
-        <div class="factions-grid-large">
+<div class="container">
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Description | default "Six distinct factions, each with unique identity, synergies, heroes, and strategic depth." }}</p>
+    </div>
+
+    <section class="factions-list-section">
+        <div class="factions-list-grid">
             {{ range .Pages }}
-            <a href="{{ .Permalink }}" class="faction-card-large faction-{{ .Title | lower }}">
-                <div class="faction-card-content">
-                    <h2 class="faction-card-name">{{ .Title }}</h2>
-                    {{ if .Params.identity }}
-                    <p class="faction-card-identity">{{ .Params.identity }}</p>
-                    {{ end }}
-                    {{ if .Params.tagline }}
-                    <p class="faction-card-tagline">{{ .Params.tagline }}</p>
-                    {{ end }}
-                    <span class="faction-card-link">Learn More →</span>
+            {{ $slug := .File.ContentBaseName }}
+            <a href="{{ .Permalink }}" class="faction-list-card faction-{{ $slug }}">
+                <div class="faction-list-banner"
+                     style="background-image: url('/images/backgrounds/{{ $slug }}_background.png');">
+                </div>
+                <div class="faction-list-body">
+                    <div class="faction-list-name" style="color: var(--faction-{{ $slug }})">{{ .Title }}</div>
+                    {{ if .Params.tagline }}<p class="faction-list-tagline">{{ .Params.tagline }}</p>{{ end }}
+                    {{ if .Params.identity }}<p class="faction-list-identity">{{ .Params.identity }}</p>{{ end }}
+                    <span class="read-more" style="display:inline-block;margin-top:var(--spacing-sm)">Explore faction →</span>
                 </div>
             </a>
             {{ else }}
-            <p class="no-factions">No factions available yet.</p>
+            <p class="no-posts">No faction pages yet.</p>
             {{ end }}
         </div>
-    </div>
+    </section>
 </div>
 {{ end }}

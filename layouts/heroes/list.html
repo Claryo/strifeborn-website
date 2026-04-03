@@ -1,68 +1,89 @@
 {{ define "main" }}
-<div class="heroes-list-page">
-    <div class="container">
-        <header class="page-header">
-            <h1>{{ .Title }}</h1>
-            <p class="page-description">Choose your champions from six unique factions</p>
-        </header>
-        
-        {{ if .Content }}
-        <div class="page-intro">
-            {{ .Content }}
+<div class="container">
+    <div class="page-header">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Description | default "Discover all 42 champions of Strifeborn across six unique factions." }}</p>
+    </div>
+
+    <section class="heroes-list-section">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-faction="Aegis">Aegis</button>
+            <button class="filter-btn" data-faction="Eclipse">Eclipse</button>
+            <button class="filter-btn" data-faction="Inquisition">Inquisition</button>
+            <button class="filter-btn" data-faction="Nebulae">Nebulae</button>
+            <button class="filter-btn" data-faction="Nexus">Nexus</button>
+            <button class="filter-btn" data-faction="Shogunate">Shogunate</button>
+            <span style="width:1px;background:var(--border-subtle);margin:0 6px;align-self:stretch"></span>
+            <button class="filter-btn" data-class="Fighter">Fighter</button>
+            <button class="filter-btn" data-class="Tank">Tank</button>
+            <button class="filter-btn" data-class="Support">Support</button>
+            <button class="filter-btn" data-class="Shooter">Shooter</button>
+            <button class="filter-btn" data-class="Assassin">Assassin</button>
+            <button class="filter-btn" data-class="Caster">Caster</button>
         </div>
-        {{ end }}
-        
-        <!-- Filter by faction (optional enhancement for later) -->
-        <div class="heroes-filters">
-            <button class="filter-btn active" data-filter="all">All Heroes</button>
-            <button class="filter-btn" data-filter="aegis">Aegis</button>
-            <button class="filter-btn" data-filter="eclipse">Eclipse</button>
-            <button class="filter-btn" data-filter="inquisition">Inquisition</button>
-            <button class="filter-btn" data-filter="nebulae">Nebulae</button>
-            <button class="filter-btn" data-filter="nexus">Nexus</button>
-            <button class="filter-btn" data-filter="shogunate">Shogunate</button>
-        </div>
-        
-        <!-- Heroes Grid -->
-        <div class="heroes-grid">
-            {{ range .Pages }}
-            <a href="{{ .Permalink }}" class="hero-card" data-faction="{{ .Params.faction | lower }}">
-                <div class="hero-card-header">
-                    <h3 class="hero-card-name">{{ .Title }}</h3>
-                    <span class="hero-card-faction faction-{{ .Params.faction | lower }}">
-                        {{ .Params.faction }}
-                    </span>
+
+        <div class="heroes-grid" id="heroes-grid">
+            {{ range sort .Pages "Params.faction" }}
+            <a href="{{ .Permalink }}"
+               class="hero-card"
+               data-faction="{{ .Params.faction }}"
+               data-class="{{ .Params.class }}">
+                <div class="hero-card-banner"
+                     style="background-image: url('/images/backgrounds/{{ .Params.faction | lower }}_background.png'); background-size: cover; background-position: center;">
                 </div>
-                
-                {{ if .Params.class }}
-                <div class="hero-card-class">{{ .Params.class }}</div>
-                {{ end }}
-                
-                {{ if .Params.tagline }}
-                <p class="hero-card-tagline">{{ .Params.tagline }}</p>
-                {{ end }}
-                
-                {{ if .Params.stats }}
-                <div class="hero-card-stats">
-                    <div class="stat-mini">
-                        <span class="stat-icon">❤️</span>
-                        <span>{{ .Params.stats.hp }}</span>
+                <div class="hero-card-body">
+                    <div class="hero-card-name">{{ .Title }}</div>
+                    <div class="hero-card-tags">
+                        <span class="tag tag-faction-{{ .Params.faction | lower }}">{{ .Params.faction }}</span>
+                        <span class="tag">{{ .Params.class }}</span>
+                        {{ if .Params.extra_synergy }}<span class="tag">{{ .Params.extra_synergy }}</span>{{ end }}
                     </div>
-                    <div class="stat-mini">
-                        <span class="stat-icon">⚔️</span>
-                        <span>{{ .Params.stats.strength }}</span>
-                    </div>
-                    <div class="stat-mini">
-                        <span class="stat-icon">✨</span>
-                        <span>{{ .Params.stats.wisdom }}</span>
-                    </div>
+                    {{ if .Params.tagline }}<p class="hero-card-tagline">{{ .Params.tagline }}</p>{{ end }}
                 </div>
-                {{ end }}
             </a>
             {{ else }}
-            <p class="no-heroes">No heroes available yet. Check back soon!</p>
+            <p class="no-posts" style="grid-column:1/-1">No heroes available yet. Check back soon!</p>
             {{ end }}
         </div>
-    </div>
+    </section>
 </div>
+
+<script>
+(function() {
+    var btns  = document.querySelectorAll('.filter-btn');
+    var cards = document.querySelectorAll('.hero-card');
+    var activeFaction = null, activeClass = null;
+
+    function applyFilters() {
+        cards.forEach(function(card) {
+            var fm = !activeFaction || card.dataset.faction === activeFaction;
+            var cm = !activeClass  || card.dataset.class   === activeClass;
+            card.style.display = (fm && cm) ? '' : 'none';
+        });
+    }
+
+    btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            if (btn.dataset.filter === 'all') {
+                activeFaction = null; activeClass = null;
+                btns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+            } else if (btn.dataset.faction) {
+                activeFaction = (activeFaction === btn.dataset.faction) ? null : btn.dataset.faction;
+                btns.forEach(function(b) { if (b.dataset.faction) b.classList.remove('active'); });
+                if (activeFaction) btn.classList.add('active');
+            } else if (btn.dataset.class) {
+                activeClass = (activeClass === btn.dataset.class) ? null : btn.dataset.class;
+                btns.forEach(function(b) { if (b.dataset.class) b.classList.remove('active'); });
+                if (activeClass) btn.classList.add('active');
+            }
+            var allBtn = document.querySelector('[data-filter="all"]');
+            if (!activeFaction && !activeClass) allBtn.classList.add('active');
+            else allBtn.classList.remove('active');
+            applyFilters();
+        });
+    });
+})();
+</script>
 {{ end }}
