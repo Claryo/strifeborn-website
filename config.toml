@@ -28,42 +28,8 @@ paginate = 10
     status = "In Development"
     tagline = "Tactical Auto-Battler with Deep Strategic Depth"
 
-# Menu configuration
+# Menu configuration — landing page only, no compendium nav
 [menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  
-  [[menu.main]]
-    name = "Heroes"
-    url = "/heroes/"
-    weight = 2
-  
-  [[menu.main]]
-    name = "Factions"
-    url = "/factions/"
-    weight = 3
-  
-  [[menu.main]]
-    name = "Mechanics"
-    url = "/mechanics/"
-    weight = 4
-  
-  [[menu.main]]
-    name = "Lore"
-    url = "/lore/"
-    weight = 5
-  
-  [[menu.main]]
-    name = "Devlog"
-    url = "/devlog/"
-    weight = 6
-  
-  [[menu.main]]
-    name = "News"
-    url = "/news/"
-    weight = 7
 
 # Markup settings
 [markup]

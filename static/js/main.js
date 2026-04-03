@@ -119,7 +119,7 @@ const observer = new IntersectionObserver(function(entries) {
 // Observe all cards that should animate on scroll
 document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.feature-card, .faction-card, .devlog-card');
-    
+
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -127,3 +127,40 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 });
+
+// === GAMEPLAY CAROUSEL ===
+(function () {
+    const carousel = document.getElementById('gameplayCarousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.lp-carousel-track');
+    const dots  = carousel.querySelectorAll('.lp-dot');
+    const prev  = carousel.querySelector('.lp-carousel-prev');
+    const next  = carousel.querySelector('.lp-carousel-next');
+    const total = dots.length;
+    let current = 0;
+
+    function goTo(index) {
+        current = (index + total) % total;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === current);
+        });
+    }
+
+    prev.addEventListener('click', function () { goTo(current - 1); });
+    next.addEventListener('click', function () { goTo(current + 1); });
+    dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); });
+    });
+
+    // Touch swipe support
+    var startX = 0;
+    track.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+    track.addEventListener('touchend', function (e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+    });
+}());
