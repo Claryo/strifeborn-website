@@ -8,8 +8,8 @@ paginate = 10
 
 # Site parameters
 [params]
-  description = "Master synergies, command heroes, conquer the Strife"
-  author = "Claryo Dev"
+  description = "Recruit heroes, unlock powerful synergies, and watch your strategy unfold in a real-time auto-battler."
+  author = "ClaryoDev"
   
   # Formspree contact form endpoint ID (get it from formspree.io after creating a form)
   # Example: formspree_id = "xabc1234"
@@ -24,7 +24,7 @@ paginate = 10
   # Game info
   [params.game]
     status = "In Development"
-    tagline = "Tactical Auto-Battler with Deep Strategic Depth"
+    tagline = "A Real-Time Auto-Battler Built Around Strategy and Synergy"
 
 # Menu configuration — landing page only, no compendium nav
 [menu]

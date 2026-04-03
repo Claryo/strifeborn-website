@@ -6,12 +6,7 @@
     <div class="lp-container">
 
         <div class="lp-game-image">
-            <!-- Replace src with actual screenshot when ready -->
-            <!-- <img src='{{ "images/screenshot.png" | relURL }}' alt="Strifeborn gameplay"> -->
-            <div class="lp-image-placeholder">
-                <span class="lp-placeholder-icon">📱</span>
-                <span class="lp-placeholder-label">Game Screenshot · 1080×2400</span>
-            </div>
+            <img src='{{ "images/screenshot.png" | relURL }}' alt="Strifeborn gameplay">
         </div>
 
         <div class="lp-hero-content">
@@ -48,32 +43,32 @@
             <div class="lp-feature-card">
                 <span class="lp-feature-icon">⚔️</span>
                 <h3>Tactical Auto-Battler</h3>
-                <p>Position your heroes, then watch synergies resolve in real-time combat across 25 rounds.</p>
+                <p>Build your team and position your heroes to watch your strategy unfold in satisfying real-time combat.</p>
             </div>
             <div class="lp-feature-card">
                 <span class="lp-feature-icon">🔮</span>
                 <h3>Deep Synergy System</h3>
-                <p>Combine faction, class, and hero-unique extra synergies to unlock explosive team bonuses.</p>
+                <p>Combine faction, class, and hero synergies to unlock powerful effects and shape specialized team compositions.</p>
             </div>
             <div class="lp-feature-card">
                 <span class="lp-feature-icon">🎯</span>
                 <h3>Strategic Itemization</h3>
-                <p>Auto-merging items, faction artifacts, and unique hero relics reward every decision.</p>
+                <p>Equip heroes, merge items, and collect artifacts and relics to unlock stronger powers and sharper build choices.</p>
             </div>
             <div class="lp-feature-card">
                 <span class="lp-feature-icon">📜</span>
                 <h3>Blessing & Oath Systems</h3>
-                <p>Choose powerful blessings and commit to faction oaths that define your entire run.</p>
+                <p>Choose blessings and commit to faction oaths to push your team toward a distinct and rewarding strategy.</p>
             </div>
             <div class="lp-feature-card">
                 <span class="lp-feature-icon">🏆</span>
                 <h3>Multiple Game Modes</h3>
-                <p>Take on PvE campaigns or test your compositions in competitive PvP.</p>
+                <p>Play the story-driven PvE campaign, survive Endless, or compete in PvP to test your builds in different ways.</p>
             </div>
             <div class="lp-feature-card">
                 <span class="lp-feature-icon">⚡</span>
-                <h3>Meta Progression</h3>
-                <p>Level up heroes, unlock relics, and earn persistent upgrades between runs without breaking balance.</p>
+                <h3>Adaptive Team Building</h3>
+                <p>Recruit new heroes, merge duplicates, and adapt your roster during each run to build around changing opportunities.</p>
             </div>
         </div>
     </div>
@@ -89,51 +84,82 @@
 
             <div class="lp-gameplay-item">
                 <!--
-                  HOW TO ADD YOUR MEDIA HERE:
+                  UNCOMMENT ONE OF THE OPTIONS BELOW AND REPLACE THE PLACEHOLDER.
 
-                  Image (PNG/JPG/GIF):
-                    Replace this entire div with:
-                    <img src='{{ "images/gameplay-shop.png" | relURL }}' alt="Shop Phase" class="lp-portrait-media">
+                  Image / GIF:
+                  <img src='{{ "images/gameplay/build-your-team.gif" | relURL }}' alt="Build Your Team" class="lp-portrait-media">
 
-                  Looping video (MP4, muted autoplay):
-                    <video class="lp-portrait-media" autoplay loop muted playsinline>
-                      <source src='{{ "images/gameplay-shop.mp4" | relURL }}' type="video/mp4">
-                    </video>
+                  Video:
+                  <video class="lp-portrait-media" autoplay loop muted playsinline>
+                    <source src='{{ "images/gameplay/build-your-team.mp4" | relURL }}' type="video/mp4">
+                  </video>
 
-                  GIF: same as image — <img src='{{ "images/gameplay-shop.gif" | relURL }}' ...>
-
-                  Files go in: static/images/
-                  Reference path: {{ "images/your-file.ext" | relURL }}
-                  Recommended size: ~200×444 px (9:20 portrait ratio)
+                  Files go in: static/images/gameplay/
                 -->
                 <div class="lp-portrait-placeholder lp-placeholder--shop">
-                    <div class="lp-portrait-label">Shop Phase</div>
+                    <div class="lp-portrait-label">Build Your Team</div>
                 </div>
-                <p class="lp-slide-caption"><strong>Shop Phase</strong> — Recruit heroes, build your composition, and spend gold wisely before the next round begins.</p>
+                <p class="lp-slide-caption"><strong>Build Your Team</strong> — Recruit new heroes and shape your formation to turn early choices into the foundation of a winning build.</p>
             </div>
 
             <div class="lp-gameplay-item">
                 <!--
-                  HOW TO ADD YOUR MEDIA HERE:
-                  Replace the div below with an <img> or <video> (see first item for examples).
-                  File: static/images/gameplay-combat.{png|gif|mp4}
+                  UNCOMMENT ONE OF THE OPTIONS BELOW AND REPLACE THE PLACEHOLDER.
+
+                  Image / GIF:
+                  <img src='{{ "images/gameplay/forge-power-spikes.gif" | relURL }}' alt="Forge Power Spikes" class="lp-portrait-media">
+
+                  Video:
+                  <video class="lp-portrait-media" autoplay loop muted playsinline>
+                    <source src='{{ "images/gameplay/forge-power-spikes.mp4" | relURL }}' type="video/mp4">
+                  </video>
+
+                  Files go in: static/images/gameplay/
+                -->
+                <div class="lp-portrait-placeholder lp-placeholder--upgrade">
+                    <div class="lp-portrait-label">Forge Power Spikes</div>
+                </div>
+                <p class="lp-slide-caption"><strong>Forge Power Spikes</strong> — Merge heroes, upgrade items, and equip powerful artifacts and relics to transform solid units into build-defining threats.</p>
+            </div>
+
+            <div class="lp-gameplay-item">
+                <!--
+                  UNCOMMENT ONE OF THE OPTIONS BELOW AND REPLACE THE PLACEHOLDER.
+
+                  Image / GIF:
+                  <img src='{{ "images/gameplay/watch-it-unfold.gif" | relURL }}' alt="Watch It Unfold" class="lp-portrait-media">
+
+                  Video:
+                  <video class="lp-portrait-media" autoplay loop muted playsinline>
+                    <source src='{{ "images/gameplay/watch-it-unfold.mp4" | relURL }}' type="video/mp4">
+                  </video>
+
+                  Files go in: static/images/gameplay/
                 -->
                 <div class="lp-portrait-placeholder lp-placeholder--combat">
-                    <div class="lp-portrait-label">Combat Phase</div>
+                    <div class="lp-portrait-label">Watch It Unfold</div>
                 </div>
-                <p class="lp-slide-caption"><strong>Combat Phase</strong> — Watch synergies resolve automatically as your team fights with no further input required.</p>
+                <p class="lp-slide-caption"><strong>Watch It Unfold</strong> — Position your heroes and lock in your strategy to watch every synergy, spell, and upgrade pay off in satisfying real-time combat.</p>
             </div>
 
             <div class="lp-gameplay-item">
                 <!--
-                  HOW TO ADD YOUR MEDIA HERE:
-                  Replace the div below with an <img> or <video> (see first item for examples).
-                  File: static/images/gameplay-blessing.{png|gif|mp4}
+                  UNCOMMENT ONE OF THE OPTIONS BELOW AND REPLACE THE PLACEHOLDER.
+
+                  Image / GIF:
+                  <img src='{{ "images/gameplay/shape-the-run.gif" | relURL }}' alt="Shape the Run" class="lp-portrait-media">
+
+                  Video:
+                  <video class="lp-portrait-media" autoplay loop muted playsinline>
+                    <source src='{{ "images/gameplay/shape-the-run.mp4" | relURL }}' type="video/mp4">
+                  </video>
+
+                  Files go in: static/images/gameplay/
                 -->
                 <div class="lp-portrait-placeholder lp-placeholder--blessing">
-                    <div class="lp-portrait-label">Blessing</div>
+                    <div class="lp-portrait-label">Shape the Run</div>
                 </div>
-                <p class="lp-slide-caption"><strong>Blessing Selection</strong> — Choose a blessing between rounds to amplify a playstyle and shape the rest of your run.</p>
+                <p class="lp-slide-caption"><strong>Shape the Run</strong> — Choose blessings and commit to faction oaths to push your team toward stronger synergies and a more specialized strategy.</p>
             </div>
 
         </div>
@@ -150,8 +176,7 @@
 
             <div class="lp-faction-card lp-faction-aegis">
                 <div class="lp-faction-img lp-faction-img--aegis">
-                    <!-- <img src='{{ "images/factions/aegis.png" | relURL }}' alt="Aegis faction"> -->
-                    <span class="lp-faction-img-label">Aegis</span>
+                    <img src='{{ "images/factions/aegis.png" | relURL }}' alt="Aegis faction">
                 </div>
                 <div class="lp-faction-info">
                     <span class="lp-faction-icon">🛡️</span>
@@ -162,20 +187,18 @@
 
             <div class="lp-faction-card lp-faction-eclipse">
                 <div class="lp-faction-img lp-faction-img--eclipse">
-                    <!-- <img src='{{ "images/factions/eclipse.png" | relURL }}' alt="Eclipse faction"> -->
-                    <span class="lp-faction-img-label">Eclipse</span>
+                    <img src='{{ "images/factions/eclipse.png" | relURL }}' alt="Eclipse faction">
                 </div>
                 <div class="lp-faction-info">
                     <span class="lp-faction-icon">🌑</span>
                     <h3>Eclipse</h3>
-                    <p>Death fuels power — hunt or be hunted</p>
+                    <p>Predation, bloodshed, and power through death</p>
                 </div>
             </div>
 
             <div class="lp-faction-card lp-faction-inquisition">
                 <div class="lp-faction-img lp-faction-img--inquisition">
-                    <!-- <img src='{{ "images/factions/inquisition.png" | relURL }}' alt="Inquisition faction"> -->
-                    <span class="lp-faction-img-label">Inquisition</span>
+                    <img src='{{ "images/factions/inquisition.png" | relURL }}' alt="Inquisition faction">
                 </div>
                 <div class="lp-faction-info">
                     <span class="lp-faction-icon">✨</span>
@@ -186,37 +209,34 @@
 
             <div class="lp-faction-card lp-faction-nebulae">
                 <div class="lp-faction-img lp-faction-img--nebulae">
-                    <!-- <img src='{{ "images/factions/nebulae.png" | relURL }}' alt="Nebulae faction"> -->
-                    <span class="lp-faction-img-label">Nebulae</span>
+                    <img src='{{ "images/factions/nebulae.png" | relURL }}' alt="Nebulae faction">
                 </div>
                 <div class="lp-faction-info">
                     <span class="lp-faction-icon">🌌</span>
                     <h3>Nebulae</h3>
-                    <p>Alien chaos, corruption, penetration</p>
+                    <p>Cosmic chaos, corruption, and eldritch power</p>
                 </div>
             </div>
 
             <div class="lp-faction-card lp-faction-nexus">
                 <div class="lp-faction-img lp-faction-img--nexus">
-                    <!-- <img src='{{ "images/factions/nexus.png" | relURL }}' alt="Nexus faction"> -->
-                    <span class="lp-faction-img-label">Nexus</span>
+                    <img src='{{ "images/factions/nexus.png" | relURL }}' alt="Nexus faction">
                 </div>
                 <div class="lp-faction-info">
                     <span class="lp-faction-icon">⚙️</span>
                     <h3>Nexus</h3>
-                    <p>Robotic systems, mana efficiency, optimization</p>
+                    <p>Synthetic precision, mana control, and ruthless efficiency</p>
                 </div>
             </div>
 
             <div class="lp-faction-card lp-faction-shogunate">
                 <div class="lp-faction-img lp-faction-img--shogunate">
-                    <!-- <img src='{{ "images/factions/shogunate.png" | relURL }}' alt="Shogunate faction"> -->
-                    <span class="lp-faction-img-label">Shogunate</span>
+                    <img src='{{ "images/factions/shogunate.png" | relURL }}' alt="Shogunate faction">
                 </div>
                 <div class="lp-faction-info">
                     <span class="lp-faction-icon">⚔️</span>
                     <h3>Shogunate</h3>
-                    <p>Speed, critical strikes, and relentless honor</p>
+                    <p>Speed, precision, and deadly honor</p>
                 </div>
             </div>
 
@@ -254,7 +274,7 @@
     <div class="lp-container lp-narrow">
         <span class="lp-section-label lp-centered">Contact</span>
         <h2>Get in Touch</h2>
-        <p class="lp-contact-sub">Questions, feedback, or press inquiries — send us a message and we'll get back to you.</p>
+        <p class="lp-contact-sub">Questions, feedback, or press inquiries — send me a message and I'll get back to you.</p>
 
         {{- if .Site.Params.formspree_id }}
         <form

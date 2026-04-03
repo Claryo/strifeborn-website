@@ -106,7 +106,9 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Observe all cards that should animate on scroll
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.feature-card, .faction-card, .devlog-card');
+    const animatedElements = document.querySelectorAll(
+    '.lp-feature-card, .lp-faction-card, .lp-gameplay-item, .devlog-card, .faction-card'
+    );
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';
