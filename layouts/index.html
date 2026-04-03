@@ -7,7 +7,7 @@
 
         <div class="lp-game-image">
             <!-- Replace src with actual screenshot when ready -->
-            <!-- <img src="/images/screenshot.png" alt="Strifeborn gameplay"> -->
+            <!-- <img src='{{ "images/screenshot.png" | relURL }}' alt="Strifeborn gameplay"> -->
             <div class="lp-image-placeholder">
                 <span class="lp-placeholder-icon">📱</span>
                 <span class="lp-placeholder-label">Game Screenshot · 1080×2400</span>
@@ -93,17 +93,17 @@
 
                   Image (PNG/JPG/GIF):
                     Replace this entire div with:
-                    <img src="/images/gameplay-shop.png" alt="Shop Phase" class="lp-portrait-media">
+                    <img src='{{ "images/gameplay-shop.png" | relURL }}' alt="Shop Phase" class="lp-portrait-media">
 
                   Looping video (MP4, muted autoplay):
                     <video class="lp-portrait-media" autoplay loop muted playsinline>
-                      <source src="/images/gameplay-shop.mp4" type="video/mp4">
+                      <source src='{{ "images/gameplay-shop.mp4" | relURL }}' type="video/mp4">
                     </video>
 
-                  GIF: same as image — <img src="/images/gameplay-shop.gif" ...>
+                  GIF: same as image — <img src='{{ "images/gameplay-shop.gif" | relURL }}' ...>
 
                   Files go in: static/images/
-                  Reference path: /images/your-file.ext
+                  Reference path: {{ "images/your-file.ext" | relURL }}
                   Recommended size: ~200×444 px (9:20 portrait ratio)
                 -->
                 <div class="lp-portrait-placeholder lp-placeholder--shop">
@@ -150,7 +150,7 @@
 
             <div class="lp-faction-card lp-faction-aegis">
                 <div class="lp-faction-img lp-faction-img--aegis">
-                    <!-- <img src="/images/factions/aegis.png" alt="Aegis faction"> -->
+                    <!-- <img src='{{ "images/factions/aegis.png" | relURL }}' alt="Aegis faction"> -->
                     <span class="lp-faction-img-label">Aegis</span>
                 </div>
                 <div class="lp-faction-info">
@@ -162,7 +162,7 @@
 
             <div class="lp-faction-card lp-faction-eclipse">
                 <div class="lp-faction-img lp-faction-img--eclipse">
-                    <!-- <img src="/images/factions/eclipse.png" alt="Eclipse faction"> -->
+                    <!-- <img src='{{ "images/factions/eclipse.png" | relURL }}' alt="Eclipse faction"> -->
                     <span class="lp-faction-img-label">Eclipse</span>
                 </div>
                 <div class="lp-faction-info">
@@ -174,7 +174,7 @@
 
             <div class="lp-faction-card lp-faction-inquisition">
                 <div class="lp-faction-img lp-faction-img--inquisition">
-                    <!-- <img src="/images/factions/inquisition.png" alt="Inquisition faction"> -->
+                    <!-- <img src='{{ "images/factions/inquisition.png" | relURL }}' alt="Inquisition faction"> -->
                     <span class="lp-faction-img-label">Inquisition</span>
                 </div>
                 <div class="lp-faction-info">
@@ -186,7 +186,7 @@
 
             <div class="lp-faction-card lp-faction-nebulae">
                 <div class="lp-faction-img lp-faction-img--nebulae">
-                    <!-- <img src="/images/factions/nebulae.png" alt="Nebulae faction"> -->
+                    <!-- <img src='{{ "images/factions/nebulae.png" | relURL }}' alt="Nebulae faction"> -->
                     <span class="lp-faction-img-label">Nebulae</span>
                 </div>
                 <div class="lp-faction-info">
@@ -198,7 +198,7 @@
 
             <div class="lp-faction-card lp-faction-nexus">
                 <div class="lp-faction-img lp-faction-img--nexus">
-                    <!-- <img src="/images/factions/nexus.png" alt="Nexus faction"> -->
+                    <!-- <img src='{{ "images/factions/nexus.png" | relURL }}' alt="Nexus faction"> -->
                     <span class="lp-faction-img-label">Nexus</span>
                 </div>
                 <div class="lp-faction-info">
@@ -210,7 +210,7 @@
 
             <div class="lp-faction-card lp-faction-shogunate">
                 <div class="lp-faction-img lp-faction-img--shogunate">
-                    <!-- <img src="/images/factions/shogunate.png" alt="Shogunate faction"> -->
+                    <!-- <img src='{{ "images/factions/shogunate.png" | relURL }}' alt="Shogunate faction"> -->
                     <span class="lp-faction-img-label">Shogunate</span>
                 </div>
                 <div class="lp-faction-info">

@@ -6,12 +6,6 @@ title = "Strifeborn"
 # Pagination
 paginate = 10
 
-# Taxonomies (categories and tags)
-[taxonomies]
-  faction = "factions"
-  class = "classes"
-  tag = "tags"
-
 # Site parameters
 [params]
   description = "Master synergies, command heroes, conquer the Strife"

@@ -7,10 +7,10 @@
     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
     
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
     
     <!-- Favicon (add your own later) -->
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}">
 </head>
 <body>
     <!-- Header with navigation -->
@@ -25,6 +25,6 @@
     {{ partial "footer.html" . }}
     
     <!-- JavaScript -->
-    <script src="/js/main.js"></script>
+    <script src="{{ "js/main.js" | relURL }}"></script>
 </body>
 </html>
