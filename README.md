@@ -138,12 +138,12 @@ Toutes les couleurs sont définies comme variables CSS au début du fichier, sou
     --accent-hover: #ff6040;      /* Couleur hover */
 
     /* Couleurs des factions */
-    --faction-aegis: #4a9eff;
-    --faction-eclipse: #9945ff;
-    --faction-inquisition: #ffd700;
-    --faction-nebulae: #00ffcc;
-    --faction-nexus: #ff4655;
-    --faction-shogunate: #ff6b35;
+    --faction-aegis: #e07d00;
+    --faction-eclipse: #167000;
+    --faction-inquisition: #ffbe00;
+    --faction-nebulae: #8d00e0;
+    --faction-nexus: #00b2e0;
+    --faction-shogunate: #ff0000;
 }
 ```
 

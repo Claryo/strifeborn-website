@@ -1,9 +1,11 @@
-# Hugo default output directory
+# Hugo
 /public/
 /resources/
-
-# Hugo cache
 /.hugo_build.lock
+
+# Env files (IMPORTANT)
+.env
+.env.*
 
 # OS files
 .DS_Store
@@ -16,8 +18,8 @@ Thumbs.db
 *.swo
 *~
 
-# Node modules (if using npm for assets)
+# Node modules
 node_modules/
 
-# Temporary files
+# Logs
 *.log
