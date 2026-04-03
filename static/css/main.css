@@ -17,8 +17,8 @@
     --bg-tertiary: #1e2433;
     --text-primary: #e8eaed;
     --text-secondary: #9aa0a6;
-    --accent-primary: #4a9eff;
-    --accent-hover: #6bb3ff;
+    --accent-primary: #e8472a;
+    --accent-hover: #ff6040;
     
     /* Faction Colors */
     --faction-aegis: #4a9eff;
@@ -139,7 +139,7 @@ body {
 .nav-link:hover,
 .nav-link.active {
     color: var(--accent-primary);
-    background-color: rgba(74, 158, 255, 0.1);
+    background-color: rgba(232, 71, 42, 0.1);
 }
 
 /* Mobile menu toggle */
@@ -226,7 +226,7 @@ body {
 .btn-primary:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(74, 158, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(232, 71, 42, 0.3);
 }
 
 .btn-secondary {
@@ -281,7 +281,7 @@ body {
 .feature-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent-primary);
-    box-shadow: 0 8px 24px rgba(74, 158, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(232, 71, 42, 0.2);
 }
 
 .feature-icon {
@@ -474,7 +474,7 @@ body {
 }
 
 .status-badge {
-    background-color: rgba(74, 158, 255, 0.2);
+    background-color: rgba(232, 71, 42, 0.2);
     color: var(--accent-primary);
     padding: 4px 12px;
     border-radius: var(--radius-sm);
@@ -500,7 +500,7 @@ body {
 
 .social-link:hover {
     color: var(--accent-primary);
-    background-color: rgba(74, 158, 255, 0.1);
+    background-color: rgba(232, 71, 42, 0.1);
 }
 
 .footer-links ul {
@@ -715,22 +715,38 @@ body::before {
 .lp-hero {
     padding: 4rem 0 3rem;
     text-align: center;
+    position: relative;
+}
+
+.lp-hero-atmosphere {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 50% at 50% 30%, rgba(232, 71, 42, 0.1) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(255, 165, 0, 0.05) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lp-hero .lp-container {
+    position: relative;
+    z-index: 1;
 }
 
 .lp-game-image {
     position: relative;
     width: 100%;
-    max-width: 900px;
-    aspect-ratio: 16 / 9;
+    max-width: 360px;
+    aspect-ratio: 9 / 20;
     margin: 0 auto 3rem;
-    border: 2px solid var(--bg-tertiary);
+    border: 2px solid rgba(232, 71, 42, 0.35);
     border-radius: var(--radius-md);
     overflow: hidden;
     background: var(--bg-secondary);
     box-shadow:
-        0 0 40px rgba(74, 158, 255, 0.07),
-        0 0 80px rgba(74, 158, 255, 0.03),
-        0 24px 48px rgba(0, 0, 0, 0.4);
+        0 0 40px rgba(232, 71, 42, 0.15),
+        0 0 80px rgba(232, 71, 42, 0.05),
+        0 24px 48px rgba(0, 0, 0, 0.5);
 }
 
 /* Pixel corner decorations */
@@ -770,8 +786,15 @@ body::before {
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.75rem;
+}
+
+.lp-placeholder-icon {
+    font-size: 2.5rem;
+    opacity: 0.3;
 }
 
 .lp-placeholder-label {
@@ -779,7 +802,7 @@ body::before {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-secondary);
-    opacity: 0.35;
+    opacity: 0.5;
 }
 
 .lp-hero-content {
@@ -797,7 +820,7 @@ body::before {
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent-primary);
-    background: rgba(74, 158, 255, 0.07);
+    background: rgba(232, 71, 42, 0.07);
     margin-bottom: 1.5rem;
 }
 
@@ -816,8 +839,8 @@ body::before {
 }
 
 @keyframes lp-title-glow {
-    0%   { text-shadow: 0 0 20px rgba(74, 158, 255, 0.25), 0 0 50px rgba(74, 158, 255, 0.08); }
-    100% { text-shadow: 0 0 40px rgba(74, 158, 255, 0.55), 0 0 90px rgba(74, 158, 255, 0.22); }
+    0%   { text-shadow: 0 0 30px rgba(232, 71, 42, 0.4), 0 0 60px rgba(232, 71, 42, 0.15); }
+    100% { text-shadow: 0 0 50px rgba(232, 71, 42, 0.7), 0 0 100px rgba(232, 71, 42, 0.3); }
 }
 
 .lp-tagline {
@@ -881,7 +904,7 @@ body::before {
 .lp-feature-card:hover {
     border-color: var(--accent-primary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(74, 158, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(232, 71, 42, 0.12);
 }
 
 .lp-feature-icon {
@@ -931,12 +954,12 @@ body::before {
 }
 
 .lp-portrait-placeholder {
-    width: 260px;
-    aspect-ratio: 9 / 16;
+    width: 200px;
+    aspect-ratio: 9 / 20;
     border-radius: var(--radius-md);
-    border: 2px solid var(--bg-tertiary);
+    border: 2px solid rgba(232, 71, 42, 0.25);
     position: relative;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(232, 71, 42, 0.06);
     flex-shrink: 0;
     overflow: hidden;
 }
@@ -975,7 +998,7 @@ body::before {
 }
 
 .lp-placeholder--shop {
-    background: linear-gradient(160deg, var(--bg-secondary), rgba(74, 158, 255, 0.1));
+    background: linear-gradient(160deg, var(--bg-secondary), rgba(232, 71, 42, 0.08));
 }
 
 .lp-placeholder--combat {
@@ -984,6 +1007,20 @@ body::before {
 
 .lp-placeholder--blessing {
     background: linear-gradient(160deg, var(--bg-secondary), rgba(255, 215, 0, 0.07));
+}
+
+.lp-portrait-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    pointer-events: none;
 }
 
 .lp-slide-caption {
@@ -1021,7 +1058,7 @@ body::before {
 .lp-carousel-btn:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
-    box-shadow: 0 0 12px rgba(74, 158, 255, 0.2);
+    box-shadow: 0 0 12px rgba(232, 71, 42, 0.2);
 }
 
 .lp-carousel-prev { left: 0; }
@@ -1047,7 +1084,7 @@ body::before {
 
 .lp-dot.active {
     background: var(--accent-primary);
-    box-shadow: 0 0 8px rgba(74, 158, 255, 0.5);
+    box-shadow: 0 0 8px rgba(232, 71, 42, 0.5);
 }
 
 /* ── FACTIONS ── */
@@ -1214,6 +1251,37 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+}
+
+/* ── DIVIDER ── */
+.lp-divider {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--bg-tertiary), rgba(232, 71, 42, 0.4), var(--bg-tertiary), transparent);
+    position: relative;
+}
+
+.lp-divider::after {
+    content: '◆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-primary);
+    padding: 0 1rem;
+    color: rgba(232, 71, 42, 0.55);
+    font-size: 0.55rem;
+}
+
+/* ── FACTION IMAGE LABEL ── */
+.lp-faction-img-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    opacity: 0.35;
 }
 
 /* ── LANDING PAGE RESPONSIVE ── */
