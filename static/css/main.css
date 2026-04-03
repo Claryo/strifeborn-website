@@ -67,24 +67,12 @@ body {
 .site-header {
     background-color: var(--bg-secondary);
     border-bottom: 2px solid var(--bg-tertiary);
-    padding: var(--spacing-md) 0;
+    padding: 0.6rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-lg);
-}
-
-.site-branding {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
 
 .logo-link {
     display: flex;
@@ -110,56 +98,6 @@ body {
     background-clip: text;
 }
 
-.site-tagline {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-/* Navigation */
-.main-nav {
-    flex: 1;
-}
-
-.nav-list {
-    display: flex;
-    gap: var(--spacing-md);
-    list-style: none;
-    justify-content: flex-end;
-}
-
-.nav-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: var(--radius-sm);
-    transition: var(--transition-fast);
-    font-weight: 500;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--accent-primary);
-    background-color: rgba(232, 71, 42, 0.1);
-}
-
-/* Mobile menu toggle */
-.mobile-menu-toggle {
-    display: none;
-    flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-}
-
-.mobile-menu-toggle span {
-    width: 24px;
-    height: 2px;
-    background-color: var(--text-primary);
-    border-radius: 2px;
-    transition: var(--transition-fast);
-}
 
 /* === MAIN CONTENT === */
 .main-content {
@@ -167,44 +105,6 @@ body {
     padding: var(--spacing-xl) 0;
 }
 
-/* === HERO SECTION (Homepage) === */
-.hero-section {
-    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
-    padding: var(--spacing-xl) 0;
-    text-align: center;
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--spacing-xl);
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: bold;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-hover));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: var(--spacing-sm);
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-md);
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    max-width: 800px;
-    margin: 0 auto var(--spacing-lg);
-    line-height: 1.8;
-}
-
-.hero-cta {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-}
 
 /* === BUTTONS === */
 .btn {
@@ -239,59 +139,6 @@ body {
     background-color: var(--accent-primary);
     color: #fff;
     transform: translateY(-2px);
-}
-
-/* === SECTIONS === */
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: var(--spacing-md);
-    color: var(--text-primary);
-}
-
-.section-subtitle {
-    text-align: center;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-lg);
-    font-size: 1.1rem;
-}
-
-.features-section,
-.factions-section,
-.devlog-section,
-.cta-section {
-    padding: var(--spacing-xl) 0;
-}
-
-/* === FEATURE CARDS === */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-}
-
-.feature-card {
-    background-color: var(--bg-secondary);
-    padding: var(--spacing-lg);
-    border-radius: var(--radius-lg);
-    border: 1px solid var(--bg-tertiary);
-    transition: var(--transition-normal);
-}
-
-.feature-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent-primary);
-    box-shadow: 0 8px 24px rgba(232, 71, 42, 0.2);
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-sm);
-}
-
-.feature-card h3 {
-    color: var(--accent-primary);
-    margin-bottom: var(--spacing-sm);
 }
 
 /* === FACTION CARDS === */
@@ -334,61 +181,6 @@ body {
 .faction-card p {
     color: var(--text-secondary);
     font-size: 0.9rem;
-}
-
-/* Faction-specific colors */
-.faction-aegis {
-    border-color: var(--faction-aegis);
-}
-
-.faction-aegis:hover {
-    border-color: var(--faction-aegis);
-    box-shadow: 0 8px 24px rgba(74, 158, 255, 0.3);
-}
-
-.faction-eclipse {
-    border-color: var(--faction-eclipse);
-}
-
-.faction-eclipse:hover {
-    border-color: var(--faction-eclipse);
-    box-shadow: 0 8px 24px rgba(153, 69, 255, 0.3);
-}
-
-.faction-inquisition {
-    border-color: var(--faction-inquisition);
-}
-
-.faction-inquisition:hover {
-    border-color: var(--faction-inquisition);
-    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
-}
-
-.faction-nebulae {
-    border-color: var(--faction-nebulae);
-}
-
-.faction-nebulae:hover {
-    border-color: var(--faction-nebulae);
-    box-shadow: 0 8px 24px rgba(0, 255, 204, 0.3);
-}
-
-.faction-nexus {
-    border-color: var(--faction-nexus);
-}
-
-.faction-nexus:hover {
-    border-color: var(--faction-nexus);
-    box-shadow: 0 8px 24px rgba(255, 70, 85, 0.3);
-}
-
-.faction-shogunate {
-    border-color: var(--faction-shogunate);
-}
-
-.faction-shogunate:hover {
-    border-color: var(--faction-shogunate);
-    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
 }
 
 /* === DEVLOG CARDS === */
@@ -459,32 +251,12 @@ body {
     margin-top: var(--spacing-xl);
 }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-}
-
-.footer-info h3,
-.footer-social h4,
-.footer-links h4 {
-    color: var(--accent-primary);
-    margin-bottom: var(--spacing-sm);
-}
-
 .status-badge {
     background-color: rgba(232, 71, 42, 0.2);
     color: var(--accent-primary);
     padding: 4px 12px;
     border-radius: var(--radius-sm);
     font-weight: 600;
-}
-
-.social-links {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
 }
 
 .social-link {
@@ -501,24 +273,6 @@ body {
 .social-link:hover {
     color: var(--accent-primary);
     background-color: rgba(232, 71, 42, 0.1);
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: var(--spacing-xs);
-}
-
-.footer-links a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: var(--transition-fast);
-}
-
-.footer-links a:hover {
-    color: var(--accent-primary);
 }
 
 .footer-bottom {
@@ -606,53 +360,6 @@ body {
     font-weight: 600;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-    }
-    
-    .mobile-menu-toggle {
-        display: flex;
-    }
-    
-    .main-nav {
-        display: none;
-    }
-    
-    .main-nav.active {
-        display: block;
-        width: 100%;
-    }
-    
-    .nav-list {
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .features-grid,
-    .factions-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-}
 
 /* ========================================
    LANDING PAGE — lp-* components
@@ -736,7 +443,7 @@ body::before {
 .lp-game-image {
     position: relative;
     width: 100%;
-    max-width: 360px;
+    max-width: 260px;
     aspect-ratio: 9 / 20;
     margin: 0 auto 3rem;
     border: 2px solid rgba(232, 71, 42, 0.35);
@@ -933,24 +640,19 @@ body::before {
     border-top: 1px solid var(--bg-tertiary);
 }
 
-.lp-carousel {
-    position: relative;
+.lp-gameplay-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     margin-top: 2.5rem;
-    overflow: hidden;
+    align-items: start;
 }
 
-.lp-carousel-track {
-    display: flex;
-    transition: transform 0.4s ease;
-}
-
-.lp-slide {
-    min-width: 100%;
+.lp-gameplay-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.75rem;
-    padding: 0 3.5rem;
+    gap: 1.25rem;
 }
 
 .lp-portrait-placeholder {
@@ -1035,56 +737,12 @@ body::before {
     color: var(--text-primary);
 }
 
-.lp-carousel-btn {
-    position: absolute;
-    top: 38%;
-    transform: translateY(-50%);
-    background: var(--bg-secondary);
-    border: 1px solid var(--bg-tertiary);
-    color: var(--text-primary);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-    line-height: 1;
-}
-
-.lp-carousel-btn:hover {
-    border-color: var(--accent-primary);
-    color: var(--accent-primary);
-    box-shadow: 0 0 12px rgba(232, 71, 42, 0.2);
-}
-
-.lp-carousel-prev { left: 0; }
-.lp-carousel-next { right: 0; }
-
-.lp-carousel-dots {
-    display: flex;
-    gap: 0.6rem;
-    justify-content: center;
-    margin-top: 2rem;
-}
-
-.lp-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--bg-tertiary);
-    border: none;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    padding: 0;
-}
-
-.lp-dot.active {
-    background: var(--accent-primary);
-    box-shadow: 0 0 8px rgba(232, 71, 42, 0.5);
+.lp-portrait-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    display: block;
 }
 
 /* ── FACTIONS ── */
@@ -1218,6 +876,92 @@ body::before {
     gap: 0.6rem;
 }
 
+/* ── CONTACT ── */
+.lp-contact {
+    padding: 5rem 0;
+    border-top: 1px solid var(--bg-tertiary);
+    text-align: center;
+}
+
+.lp-contact h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.lp-contact-sub {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.lp-contact-fallback {
+    color: var(--text-secondary);
+}
+
+.lp-contact-fallback a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.lp-contact-fallback a:hover {
+    color: var(--accent-hover);
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.contact-row label {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.contact-row input,
+.contact-row textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--bg-tertiary);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    padding: 0.65rem 1rem;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    width: 100%;
+    resize: vertical;
+}
+
+.contact-row input::placeholder,
+.contact-row textarea::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.contact-row input:focus,
+.contact-row textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px rgba(232, 71, 42, 0.15);
+}
+
+/* Honeypot: must be invisible to humans, bots fill it → Formspree rejects */
+.contact-honeypot {
+    display: none;
+}
+
 /* ── FOOTER OVERRIDE ── */
 .lp-footer-content {
     display: flex;
@@ -1292,6 +1036,10 @@ body::before {
     .lp-factions-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .lp-gameplay-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
 }
 
 @media (max-width: 600px) {
@@ -1300,12 +1048,6 @@ body::before {
     }
     .lp-factions-grid {
         grid-template-columns: 1fr;
-    }
-    .lp-slide {
-        padding: 0 0.5rem;
-    }
-    .lp-carousel-btn {
-        display: none;
     }
     .lp-follow-buttons {
         flex-direction: column;
