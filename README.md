@@ -12,7 +12,7 @@ Official website for Strifeborn - A tactical auto-battler with deep strategic de
 
 ```bash
 # Navigate to your repo folder
-cd path/to/strifeborn-website
+cd D:\Strifeborn\strifeborn-website
 
 # Open in VS Code
 code .

@@ -25,7 +25,7 @@ paginate = 10
   
   # Formspree contact form endpoint ID (get it from formspree.io after creating a form)
   # Example: formspree_id = "xabc1234"
-  formspree_id = ""
+  formspree_id = "mgopnvrv"
 
   # Game info
   [params.game]
