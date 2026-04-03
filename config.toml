@@ -17,15 +17,15 @@ paginate = 10
   description = "Master synergies, command heroes, conquer the Strife"
   author = "Claryo Dev"
   
+  # Formspree contact form endpoint ID (get it from formspree.io after creating a form)
+  # Example: formspree_id = "xabc1234"
+  formspree_id = "mgopnvrv"
+
   # Social links
   [params.social]
     twitter = "https://x.com/ClaryoDev"
     linkedin = "https://www.linkedin.com/in/alexan-viel-211659141/"
     instagram = "https://www.instagram.com/strifeborn_game/"
-  
-  # Formspree contact form endpoint ID (get it from formspree.io after creating a form)
-  # Example: formspree_id = "xabc1234"
-  formspree_id = "mgopnvrv"
 
   # Game info
   [params.game]
